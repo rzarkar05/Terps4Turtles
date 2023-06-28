@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terps4TurtlesMap</title>
+    <!--mobile apps-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content='' />
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		<!--//mobile apps-->
+		<!-- Custom Theme files -->
+		<link href="/static/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+		<link href="/static/css/style.css" type="text/css" rel="stylesheet" media="all">
+		<!-- //Custom Theme files -->
+		<!-- js -->
+		<script src="/static/js/jquery-1.11.1.min.js"></script> 
+		<!-- //js -->
+		<!--web-fonts-->
+		<link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>	
+		<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800italic,800' rel='stylesheet' type='text/css'>
+		<!--//web-fonts-->
+		<!-- start-smooth-scrolling-->
+		<script type="text/javascript" src="/static/js/move-top.js"></script>
+		<script type="text/javascript" src="/static/js/easing.js"></script>	
+		<script type="text/javascript">
+				jQuery(document).ready(function($) {
+					$(".scroll").click(function(event){		
+						event.preventDefault();
+				
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+					});
+				});
+		</script>
+		<!--//end-smooth-scrolling-->	
+</head>
+<body>
+    <h1>Your Turtle: {{firstname}}</h1>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                 Customize your Turtle
+            </div>
+
+            <div class="card-body">
+                <form method = "POST">
+                    <div class="form-group">
+                        <label>Turtle Name</label>
+                        <input type="text" class="form-control" name="first" value="{{firstname}}" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Turtle Description</label>
+                        <input type="text" class="form-control" name="last" value="{{lastname}}" required>
+                    </div>                  
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    {%include 'map.html'%}
+</body>
+</html>

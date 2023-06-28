@@ -1,0 +1,189 @@
+<!--
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Terps4Turtles</title>
+<!--mobile apps-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content='' />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--//mobile apps-->
+<!-- Custom Theme files -->
+<link href="/static/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+<link href="/static/css/style.css" type="text/css" rel="stylesheet" media="all">
+<!-- //Custom Theme files -->
+<!-- js -->
+<script src="/static/js/jquery-1.11.1.min.js"></script> 
+<!-- //js -->
+<!--web-fonts-->
+<link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>	
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800italic,800' rel='stylesheet' type='text/css'>
+<!--//web-fonts-->
+<!-- start-smooth-scrolling-->
+<script type="text/javascript" src="/static/js/move-top.js"></script>
+<script type="text/javascript" src="/static/js/easing.js"></script>	
+<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+		
+		$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+			});
+		});
+</script>
+<!--//end-smooth-scrolling-->	
+</head>
+<body>
+	<!--banner-->
+	<div class="banner">
+		<div class="effect5"><!--shadow effect-->
+			<div class="container">
+				<div class="logo">
+					<h1><a href="index.html"><img src="/static/images/logo.png" alt="" /></a></h1>
+				</div>
+				<div class="banner-slider">
+					<h2>Hello!</h2>
+					<h3>Welcome to Terps4Turtles</h3>
+				</div>
+				<div class="top-nav">
+					<nav class="navbar navbar-default">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">Menu
+								
+							</button>
+						</div>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav navbar-center">
+								<li class="active"><a href="index.html"><span>H</span><span>O</span><span>M</span><span>E</span></a></li>
+								<li><a href="about.html" class="link link--yaku"><span>A</span><span>B</span><span>O</span><span>U</span><span>T</span></a></li>
+								<li><a href="/auth/login" class="link link--yaku"><span>D</span><span>E</span><span>M</span><span>O</span><span></span></a></li>
+								<li><a href="/auth/login" class="link link--yaku"><span>L</span><span>O</span><span>G</span><span>I</span><span>N</span></a></li>
+								<li><a href="http://rishispersonalprofile.rf.gd/#home" class="link link--yaku"><span>P</span><span>O</span><span>R</span><span>T</span><span>F</span><span>O</span><span>L</span><span>I</span><span>O</span></a></li>
+							</ul>
+							<div class="clearfix"> </div>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--//banner-->
+	<!--welcome-->
+	<div class="welcome">
+		<div class="container">
+			<h3 class="title">Welcome to Terps4Turtles</h3>
+			<p>Get started by creating an account below(requires 10 dollar donation) or just try it out with a demo </p>
+			<div class="welcome-info">
+				<div class="col-md-6 welcome-grids">
+					<div class="welcome-img">
+						<img src="/static/images/img1.jpg" class="img-responsive zoom-img" alt=""/>
+					</div>
+				</div>
+				<div class="col-md-6 welcome-grids">
+					<div class="welcome-img">
+						<img src="/static/images/img2.jpg" class="img-responsive zoom-img" alt=""/>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<p></p>			
+		</div>
+	</div>
+	<!--//welcome-->
+	<!--register-->
+	<div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h1> Register</h1>
+            </div>
+            <div class="card-body">
+                {% if msg %}
+                    <div class = "alert alert-danger" role="alert">
+                        {{msg}}
+                    </div>
+                {% endif %} 
+                <form method ="POST" action="/auth/">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Username</label>
+                            <input type="username" class="form-control" name="username">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Email</label>
+                            <input class="form-control" name="email">
+                        </div>
+                    </div>
+    
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Turtle Name</label>
+                            <input type="text" class="form-control" name="firstname">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Write a fun description of your turtle here!</label>
+                            <input type="text" class="form-control" name="lastname">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control"
+                               name="password" required>
+                    </div>
+    
+                    <div class="form-group">
+                        <label>Verify Password</label>
+                        <input type="password" class="form-control"
+                               name="password2" required>
+                    </div>
+    
+					<p>This link will redirect you to a payment service. After presseing the button navigate back to the login to sign into your account.</p>
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </form>
+            </div>
+            <div class="card-footer text-muted">
+                <a href="/auth/login"> Already have an account? </a>
+            </div>
+        </div>
+    </div>
+	<!--register-->
+	<!--footer-->
+	<div class="footer">
+		<div class="footer-info">
+			<div class="container">	
+				<div class="icons">	
+					<script>$(function () {
+					  $('[data-toggle="tooltip"]').tooltip()
+					})</script>
+				</div>
+				<p>© 2023 Terps4Turtles . All rights reserved | Design by Rishi Zarkar</p>					
+			</div>
+		</div>
+	</div>
+	<!--//footer-->
+	<!--smooth-scrolling-of-move-up-->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+			};
+			*/
+			
+			$().UItoTop({ easingType: 'easeOutQuart' });
+			
+		});
+	</script>
+	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+	<!--//smooth-scrolling-of-move-up-->
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/static/js/bootstrap.js"></script>
+</body>
+</html>
